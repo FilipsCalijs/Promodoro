@@ -9,52 +9,68 @@
 </head>
 <body>
     <div class="container">
-        <h1>Pomodoro Timer:</h1>
-        <h1 class="head_title" id="title_text">Time to Work</h1>
-        <h2 class="lapse">2nd lapse (static)</h2>
-<!--         
-
-
-        <div id="timer">00:00</div>
-        <div id="stageDisplay">Work</div>
-        <div id="cycleCount">Cycles: 0</div>
-
-        <button class="button" id="restartButton">Restart</button>
-        <button class="button" id="actionButton">Start</button>
-
         
-        <button class="button" id="settingsButton">Settings</button>
+        <h1>Pomodoro Timer:</h1>
+        
+        <h1 class="head_title" id="stageDisplay">Time to Work</h1>
+        <h2 class="lapse">2nd lapse (static)</h2>
 
-        <div id="settingsModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form id="settingsForm">
-                    <label for="workDuration">Work Duration (sec):</label>
-                    <input type="number" id="workDuration" name="workDuration" value="5"><br><br>
+    <div id="timer">00:00</div>
+    <div id="cycleCount">Cycles: 0</div>
+    <div class="circle">
+      <svg width="430" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+         <g transform="translate(110,110)">
+            <circle r="100" class="e-c-base"/>
+            <g transform="rotate(-90)">
+               <circle r="100" class="e-c-progress"/>
+               <g id="e-pointer">
+                  <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+               </g>
+            </g>
+         </g>
+      </svg>
+    </div>
 
-                    <label for="chillDuration">Chill Duration (sec):</label>
-                    <input type="number" id="chillDuration" name="chillDuration" value="3"><br><br>
-
-                    <label for="longChillDuration">Long Chill Duration (sec):</label>
-                    <input type="number" id="longChillDuration" name="longChillDuration" value="10"><br><br>
-
-                    <input type="button" value="Apply" id="applySettings">
-                </form>
-            </div>
-        </div>
     
- -->
+    
+    <!-- <button class="button" id="nextButton">Next</button> -->
+    <button class="button-start" id="actionButton">START</button>
+    <div class="btn">
+        <button  class="button" id="restartButton"><img src="/Promodoro/img/restart.svg" alt=""></button>
 
-        <div id="timer"></div>
-        <div class="inputs">
-            <input type="number" id="time-input" placeholder="Enter sec" />
-            <button class="btn" id="start-btn">Start</button>
+        <button class="button" id="settingsButton"><img src="/Promodoro/img/settings.svg" alt=""></button>
+    </div>
+    
+
+    <!-- Модальное окно настроек -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="settingsForm">
+                <label for="workDuration">Work Duration (min):</label>
+                <input type="number" id="workDuration" name="workDuration" value="5"><br><br>
+
+                <label for="chillDuration">Chill Duration (min):</label>
+                <input type="number" id="chillDuration" name="chillDuration" value="3"><br><br>
+
+                <label for="longChillDuration">Long Chill Duration (min):</label>
+                <input type="number" id="longChillDuration" name="longChillDuration" value="10"><br><br>
+
+              <!-- <label for="progressColor">Progress Color:</label>
+              <input type="color" id="progressColor" name="progressColor" value="#F7958E"><br><br> -->
+
+
+                <input type="button" value="Apply" id="applySettings">
+            </form>
         </div>
+    </div>
+    
+
+ 
 </div> 
 
 
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 
 </body>
 </html>
