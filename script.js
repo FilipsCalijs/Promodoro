@@ -32,9 +32,11 @@ progressBar.style.strokeDasharray = length;
 function addNewTaskForm() {
     // Создаем элементы формы
     const form = document.createElement('div');
+    form.classList.add('task-modal');
     const input = document.createElement('input');
+    input.classList.add('task-modal-input');
     const startButton = document.createElement('button');
-
+    startButton.classList.add('task-modal-button');
     // Настраиваем элементы
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', 'Введите название задания');
@@ -279,13 +281,35 @@ applySettingsButton.onclick = function() {
     }
 }
 
-
 function updateDisplay() {
-  stageDisplay.textContent = stage;
+  let displayText;
+  let textColor;
+
+  switch (stage) {
+    case "Work":
+      displayText = "Time to Work!";
+      textColor = '#6B70B0'; 
+      break;
+    case "Chill":
+      displayText = "Chill Out!";
+      textColor = '#3498db'; 
+      break;
+    case "Long Chill":
+      displayText = "Long Break!";
+      textColor = '#2ecc71'; 
+      break;
+    default:
+      displayText = stage;
+      textColor = '#d44848'; 
+  }
+
+  stageDisplay.textContent = displayText;
+  stageDisplay.style.color = textColor;
   cycleCountDisplay.textContent = `Cycles: ${cycleCount}`;
   updateTimerDisplay();
-  remainingSeconds = durations[stage]; 
+  remainingSeconds = durations[stage];
 }
+
 
 function initializeTimer() {
   updateDisplay();
