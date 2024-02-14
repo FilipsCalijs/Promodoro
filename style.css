@@ -1,7 +1,7 @@
 body {
     font-family: 'Inter', sans-serif;
     color: white;
-
+    
     background-color: #212230;
     background-image: url("./img/bg.svg");
 
@@ -17,6 +17,7 @@ body {
     
 }
 .main-header{
+  height: 10%;
   font-size: 40px;
 }
 .container {
@@ -164,7 +165,7 @@ label {
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      width: 400px;
+      width: 80%;
       position: relative;
     }
 
@@ -314,10 +315,6 @@ input[type="number"] {
 
 @media only screen and (max-height: 900px) {
 
-  .img-cicle{
-    width: 300px;
-    height: 300px;
-  }
 }
 @media only screen and (max-width: 500px) {
 
@@ -325,8 +322,19 @@ input[type="number"] {
     width: 300px;
     height: 300px;
   }
+  #timer{
+    position: absolute; 
+    top: 44%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+    font-size: 85px;
+  }
   .head_title{
     font-size: 48px;
+  }
+  .button{
+    padding: 10px 12px;
   }
   .main-header{
     font-size: 34px;
@@ -334,7 +342,9 @@ input[type="number"] {
   .lapse{
     font-size: 34px;
   }
-  #timer{
-    top: 45%;
+  #settingsForm{
+    width: 70%;
+    height: 80%;
   }
+
 }
