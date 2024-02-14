@@ -61,10 +61,11 @@ function addNewTaskForm() {
       // Добавляем элемент с названием задачи в форму
       form.appendChild(taskNameDisplay);
         // Создаем кнопки завершения задания
-        const completeButton = document.createElement('button');
-        const notCompleteButton = document.createElement('button');
-
-        // Настраиваем кнопки
+      const completeButton = document.createElement('button');
+      completeButton.classList.add('task-modal-button');
+      const notCompleteButton = document.createElement('button');
+      notCompleteButton.classList.add('task-modal-button');
+                // Настраиваем кнопки
         completeButton.textContent = 'complete';
         notCompleteButton.textContent = 'not complete';
 
