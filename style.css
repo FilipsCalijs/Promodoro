@@ -42,7 +42,7 @@ label {
    font-size: 100px;
    margin: 0;
    position: absolute;
-   top: 41%;
+   top: 37%;
    
    left: 50%;
    transform: translate(-50%, -50%);
@@ -102,7 +102,7 @@ label {
 }
 .e-c-pointer {
    fill: #d44848;
-   stroke: #d44848;
+
    stroke-width: 3px;
 }
 #e-pointer {
@@ -237,54 +237,60 @@ input[type="number"] {
   background-color: #45a049; 
 }
 .task-modal {
-   color:#0056b3;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-   padding: 20px;
-   border-radius: 10px;
-   display: flex;
-   justify-content: center;
-  /* Horizontal alignment */
-   align-items: center;
-}
-.task-modal-input {
-   width: 100%;
-   padding: 20px;
-   box-sizing: border-box;
-   border: 1px solid #ccc;
-   border-radius: 10px;
+  color: white;
+
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-}
-.task-modal-button {
-   padding: 10px 20px;
-   border-radius: 5px;
-   background-color: #4CAF50;
-   color: white;
-   border: 10px;
-   cursor: pointer;
-   font-size: 16px;
 }
 
-.task-modal-div {
-  color: black;
+.task-modal-input {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.task-modal-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px; /* Add margin to separate the button from the input */
+}
+
+
+.task-modal-div {
+  color: white;
+  
   padding: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+
  
 }
 
 .task-modal-div-complite{
-  color: black;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  color: white;
+
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #686A85;
 }
 
 
@@ -305,18 +311,16 @@ input[type="number"] {
   font-size: 18px;
   margin-top: 10px; /* Add spacing between task elements */
 }
-
+.heading{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 
 .img-cicle{
   width: 420px;
   height: 420px;
 }
-@media only screen and (max-height: 700px) {
-   .img-cicle{
-       width: 350px;
-       height: 350px;
-  }
-}
+
 @media only screen and (max-width: 500px) {
    .img-cicle{
        width: 350px;
@@ -334,13 +338,13 @@ input[type="number"] {
        font-size: 24px;
   }
    #timer{
-      top: 38%;
+      top: 32%;
       
       font-size:85px;  
   }
 
   .task-modal-div {
-      padding: 15px; /* Adjust padding for smaller screens */
+      padding: 5px; /* Adjust padding for smaller screens */
   }
   
   .task-modal-button {

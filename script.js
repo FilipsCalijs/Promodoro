@@ -28,28 +28,35 @@ let pointer = document.getElementById("e-pointer");
 let length = Math.PI * 2 * 100;
 
 progressBar.style.strokeDasharray = length;
-
 function addNewTaskForm() {
-  
   const form = document.createElement("div");
   form.classList.add("task-modal");
+  const btns = document.createElement("div");
+  btns.classList.add("bnts-modal");
+
+  const heading = document.createElement("h2");
+  heading.classList.add("heading");
+  heading.textContent = "Task";
+
   const input = document.createElement("input");
   input.classList.add("task-modal-input");
   const startButton = document.createElement("button");
   startButton.classList.add("task-modal-button");
-  // Настраиваем элементы
+
+
+
   input.setAttribute("type", "text");
   input.setAttribute("placeholder", "Введите название задания");
   startButton.textContent = "Начать задание";
-  startButton.disabled = true; // кнопка неактивна пока поле ввода пустое
+  startButton.disabled = true;
 
-  // Добавляем элементы в форму
+
+  // Add elements to form
+  form.appendChild(heading);
   form.appendChild(input);
   form.appendChild(startButton);
 
   document.querySelector(".container").appendChild(form);
-
-  // Обработчик событий для поля ввода
   input.addEventListener("input", function () {
     startButton.disabled = !input.value.trim();
   });
@@ -58,7 +65,7 @@ function addNewTaskForm() {
   startButton.addEventListener("click", function () {
     const taskNameDisplay = document.createElement("div");
     taskNameDisplay.classList.add("task-modal-div");
-    taskNameDisplay.textContent = `Task: ${input.value.trim()}`;
+    taskNameDisplay.textContent = `${input.value.trim()}`;
     // Добавляем элемент с названием задачи в форму
     form.appendChild(taskNameDisplay);
     // Создаем кнопки завершения задания
@@ -71,8 +78,9 @@ function addNewTaskForm() {
     notCompleteButton.textContent = "not complete";
 
     // Добавляем кнопки на страницу
-    form.appendChild(completeButton);
-    form.appendChild(notCompleteButton);
+    btns.appendChild(completeButton);
+    btns.appendChild(notCompleteButton);
+    form.appendChild(btns);
 
     // Скрываем ввод и кнопку начала задания
     input.style.display = "none";
@@ -89,7 +97,6 @@ function addNewTaskForm() {
     });
   });
 }
-
 // Функция для отображения сообщения о завершении задания
 function displayCompletionMessage(form, taskName, isCompleted) {
   const message = document.createElement("div");
