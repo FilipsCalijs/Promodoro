@@ -225,7 +225,7 @@ input[type="number"] {
 }
 
 #applySettings {
-  background-color: #4caf50;
+  background-color: #686A85;
   color: white; 
   padding: 10px 15px;
   border: none;
@@ -234,7 +234,7 @@ input[type="number"] {
   transition: background-color 0.3s ease; 
 }
 #applySettings:hover:not(:disabled) {
-  background-color: #45a049; 
+  background-color: #686A85; 
 }
 .task-modal {
   color: white;
@@ -246,7 +246,7 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
   text-align: center; 
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+ 
 }
 
 .task-modal-input {
@@ -261,7 +261,7 @@ input[type="number"] {
 .task-modal-button {
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #686A85;
   color: white;
   border: 10px;
   cursor: pointer;
@@ -297,7 +297,7 @@ input[type="number"] {
 .task-modal-button {
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #686A85;
   color: white;
   border: 10px;
   cursor: pointer;
