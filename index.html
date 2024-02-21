@@ -5,48 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@203&display=swap"
+      rel="stylesheet"
+    />
     <title>Pomodoror Timer by iTeo</title>
   </head>
   <body>
     <div class="container">
-      <h1 class="main-header">Pomodoro Timer:</h1>
+      <!-- Basic text -->
+      <h2 class="head_title" id="stageDisplay">Time to Work!</h2>
 
-      <h1 class="head_title" id="stageDisplay">Time to Work!</h1>
-      <h2 class="lapse" id="cycleCount">Cycles: 0</h2>
-      <div class="timer" id="timer">05:00</div>
-
-      <div class="circle">
-        <svg
-          class="img-cicle"
-          width="250"
-          viewBox="0 0 220 220"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g transform="translate(110,110)">
-            <circle r="100" class="e-c-base" />
-            <g transform="rotate(-90)">
-              <circle r="100" class="e-c-progress" />
-              <g id="e-pointer">
-                <circle cx="100" cy="0" r="8" class="e-c-pointer" />
+      <h2 class="circle" id="cycleCount">Pomodoro cycle: 0</h2>
+      <!-- Timer circle area -->
+      <div class="circle-timer-container">
+        <div class="circle">
+          <svg
+            class="img-cicle"
+            width="250"
+            viewBox="0 0 220 220"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g transform="translate(110,110)">
+              <circle r="100" class="e-c-base" />
+              <g transform="rotate(-90)">
+                <circle r="100" class="e-c-progress" />
+                <g id="e-pointer">
+                  <circle cx="100" cy="0" r="8" class="e-c-pointer" />
+                </g>
               </g>
             </g>
-          </g>
-        </svg>
+          </svg>
+        </div>
+        <div class="timer" id="timer">05:00</div>
       </div>
 
-      <!-- <button class="button" id="nextButton">Next</button> -->
+      <!-- Start and setting button (image) -->
       <button class="button-start" id="actionButton">START</button>
       <div class="btn">
         <button class="button" id="restartButton">
-          <img src="./img/restart.svg" alt="" />
+          <img
+            style="width: 28px; height: auto"
+            src="./img/restart.svg"
+            alt=""
+          />
         </button>
 
         <button class="button" id="settingsButton">
-          <img src="./img/settings.svg" alt="" />
+          <img
+            style="width: 28px; height: auto"
+            src="./img/settings.svg"
+            alt=""
+          />
+        </button>
+        <button class="button" id="musicToggle">
+          <img style="width: 28px; height: auto" src="./img/music.svg" alt="" />
         </button>
       </div>
 
-      <!-- Модальное окно настроек -->
+      <!-- Settings (hidden) -->
       <div id="settingsModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -56,18 +75,18 @@
               type="number"
               id="workDuration"
               name="workDuration"
-              value="5"
+              value="25"
             /><br /><br />
 
-            <label for="chillDuration">Chill Duration (min):</label>
+            <label for="chillDuration">Short Break Duration (min):</label>
             <input
               type="number"
               id="chillDuration"
               name="chillDuration"
-              value="3"
+              value="5"
             /><br /><br />
 
-            <label for="longChillDuration">Long Chill Duration (min):</label>
+            <label for="longChillDuration">Long Break Duration (min):</label>
             <input
               type="number"
               id="longChillDuration"
@@ -75,8 +94,25 @@
               value="10"
             /><br /><br />
 
-            <!-- <label for="progressColor">Progress Color:</label>
-              <input type="color" id="progressColor" name="progressColor" value="#F7958E"><br><br> -->
+            <label for="longChillFrequency">Long Break Frequency:</label>
+            <input
+              type="number"
+              id="longChillFrequency"
+              name="longChillFrequency"
+              value="3"
+              min="1"
+              max="5"
+            /><br /><br />
+
+            <label for="volumeControl">Music volume:</label>
+            <input
+              type="range"
+              id="volumeControl"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.5"
+            />
 
             <input type="button" value="Apply" id="applySettings" />
           </form>

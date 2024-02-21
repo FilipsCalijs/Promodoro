@@ -1,5 +1,5 @@
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   color: white;
   background-color: #212230;
   background-image: url("./img/bg.svg");
@@ -9,11 +9,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+  min-height: 100vh; 
+}
+.circle-timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 250px; 
+  height: 270px; 
+}
+.img-cicle{
+  width: 250px;
+  height: 270px;
 }
 .main-header{
-   font-size: 30px;
-margin:0;
+   font-family: 'Inter';
+   font-size: 50px;
+   margin:0;
 }
 .container {
   display: flex;
@@ -21,9 +34,8 @@ margin:0;
   align-items: center;
   justify-content: center;
   margin: 0;
-  position: relative; /* Добавлено */
+  position: relative; 
 }
-
 .modal {
    display: none;
    position: fixed;
@@ -39,30 +51,28 @@ label {
    color: black;
 }
 #timer {
-   font-size: 100px;
-   margin: 0;
-   position: absolute;
-   top: 37%;
-   
-   left: 50%;
-   transform: translate(-50%, -50%);
-   z-index: 1;
+  font-family: 'Inter';
+  position: absolute;
+  font-size: 64px;
+  color: white;
+  text-align: center;
+  width: 100%; 
 }
 
 .button {
-   background-color: #6B70B0;
+   background-color: #FF5733;
    border-radius: 100%;
    padding: 10px 12px;
    border: none;
    color: white;
-  /* You can set the text color as needed */
    box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
    margin-bottom: 20px;
 }
 .button-start{
+   font-family: 'Inter';
    width: 120px;
    height: 40px;
-   background-color: #686A85;
+   background-color: #FF5733;
    color: white;
    border: none;
    outline: none;
@@ -101,22 +111,14 @@ label {
    transition: stroke-dashoffset 0.7s;
 }
 .e-c-pointer {
-   fill: #d44848;
+   fill: #900C3F;
 
    stroke-width: 3px;
 }
 #e-pointer {
    transition: transform 0.7s;
 }
-.head_title {
-   font-size: 45px;
-   color: rgb(107, 112, 176);
-   margin: 0;
-}
-.lapse{
-   font-size: 34px;
-   margin: 0;
-}
+
 #overlay {
    position: fixed;
    top: 0;
@@ -234,7 +236,7 @@ input[type="number"] {
   transition: background-color 0.3s ease; 
 }
 #applySettings:hover:not(:disabled) {
-  background-color: #686A85; 
+  background-color: #686a82; 
 }
 .task-modal {
   color: white;
@@ -246,7 +248,7 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
   text-align: center; 
- 
+
 }
 
 .task-modal-input {
@@ -258,28 +260,15 @@ input[type="number"] {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
 }
 
-.task-modal-button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #686A85;
-  color: white;
-  border: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px; /* Add margin to separate the button from the input */
-}
-
-
 .task-modal-div {
   color: white;
-  
+
   padding: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 
- 
 }
 
 .task-modal-div-complite{
@@ -302,57 +291,69 @@ input[type="number"] {
   border: 10px;
   cursor: pointer;
   font-size: 16px;
-  margin-left: 10px; /* Add spacing between buttons */
+  margin-top: 10px; 
+  margin:5px
+
 }
 
-/* Styles for the dynamically added task name display */
 .task-name-display {
   color: white;
   font-size: 18px;
-  margin-top: 10px; /* Add spacing between task elements */
+  margin-top: 10px;
 }
 .heading{
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.img-cicle{
-  width: 420px;
-  height: 420px;
+.circle{
+  font-size: 24px;
+  margin:0;
 }
 
-@media only screen and (max-width: 500px) {
+.head_title{
+  font-size:35px;
+  margin:0;
+}
+
+@media only screen and (max-width: 300px) {
+  .circle-timer-container{
+    width: 250px; 
+    height: 270px;
+  }
    .img-cicle{
-       width: 350px;
-       height: 350px;
+       width: 250px;
+       height: 250px;
   }
 
-
-   .head_title{
-       font-size: 28px;
-  }
    .main-header{
-       font-size: 24px;
+       font-size: 40px;
   }
-   .lapse{
-       font-size: 24px;
+
+  .head_title{
+    font-size:34px;
+    margin:0;
   }
-   #timer{
-      top: 32%;
-      
-      font-size:85px;  
+
+   .circle{
+     font-family: 'Inter';
+     margin:0;
+       font-size: 24px;
   }
 
   .task-modal-div {
-      padding: 5px; /* Adjust padding for smaller screens */
+      padding: 5px; 
   }
-  
+
   .task-modal-button {
-      font-size: 14px; /* Adjust font size for smaller screens */
-      padding: 8px 15px; /* Adjust padding for smaller screens */
+      font-size: 14px;
+      padding: 8px 15px;
   }
 
   .task-name-display {
-      font-size: 16px; /* Adjust font size for smaller screens */
+      font-size: 16px;
+  }
+  #timer {
+     font-size: 64px; 
   }
 }
